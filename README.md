@@ -81,8 +81,9 @@ Produto <|-- CD
 Produto <|-- Vinil
 ProdutoController ..|> ProdutoRepository
 ```
+</br>
 
-## 🧠 Conceitos Aplicados
+## Conceitos Aplicados
 
 - Encapsulamento com modificadores de acesso
 - Herança (Produto como superclasse de CD e Vinil)
@@ -91,14 +92,16 @@ ProdutoController ..|> ProdutoRepository
 - Uso de `Optional` para evitar `null`
 - Manipulação de listas (`ArrayList`)
 - Tratamento de exceções com `try/catch`
+</br>
 
-## ✅ Melhorias Adicionais
+## Melhorias Adicionais
 
 - Utilização da classe `InputUtils` para padronizar e tratar entradas de dados (evitando exceções)
 - Estrutura visual no console com cores para facilitar a usabilidade
 - Mensagens claras e interativas ao usuário
+</br>
 
-## 📌 Como Executar
+## Como Executar
 
 1. Clone o repositório:
 ```bash
@@ -106,10 +109,12 @@ git clone https://github.com/renatangr/projeto_final_bloco_01.git
 ```
 2. Importe o projeto em sua IDE Java favorita (ex: Eclipse, IntelliJ)
 3. Execute a classe `Menu.java` como aplicação Java
+</br>
 
-## 👩‍💻 Autora
+## Autora
 
-**Renata Negrini**  
+**Renata Negrini**
+
 Email: renatanegrinim@gmail.com.br  
 GitHub: [github.com/renatangr](https://github.com/renatangr)
 
