@@ -84,9 +84,22 @@ public class ProdutoController implements ProdutoRepository {
 					return true;
 				}
 			} while(true);
+			
 		} else {
+			
 			System.err.println(" Não foi obtido nenhum resultado para o ID pesquisado.");
-			return true;
+			
+			while (true) {
+				System.out.print(" Deseja tentar novamente? (S/N): ");
+				resposta = leia.nextLine();
+	            if (resposta.equalsIgnoreCase("S")) {
+	                return true;
+	            } else if (resposta.equalsIgnoreCase("N")) {
+	                return false;
+	            } else {
+	                System.err.println(" Inválido. Digite S para sim ou N para não.");
+	            }
+			}
 		}
 	}
 	

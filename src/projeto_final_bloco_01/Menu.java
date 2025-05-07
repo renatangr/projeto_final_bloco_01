@@ -10,6 +10,7 @@ import projeto_final_bloco_01.model.CD;
 import projeto_final_bloco_01.model.Produto;
 import projeto_final_bloco_01.model.Vinil;
 import projeto_final_bloco_01.util.Cores;
+import projeto_final_bloco_01.util.InputUtils;
 
 public class Menu {
 
@@ -66,29 +67,24 @@ public class Menu {
 		            nome = leia.nextLine();
 		            System.out.print(" Descrição do produto: ");
 		            descricao = leia.nextLine();
-		            System.out.print(" Preço: ");
-		            preco = leia.nextFloat();
-		            System.out.print(" Quantidade em Estoque: ");
-		            quantidadeEmEstoque = leia.nextInt();
+		            preco = InputUtils.lerFloat(" Preço: ");
+		            quantidadeEmEstoque = InputUtils.lerInt(" Quantidade em Estoque: ");
+		            
 		            do {
-		            	System.out.print(" Tipo de produto a cadastrar (1 - CD | 2 - Vinil): ");
-		            	tipo = leia.nextInt();
+		            	tipo = InputUtils.lerInt(" Tipo de produto a cadastrar (1 - CD | 2 - Vinil): ");
 		            	
 		            	if(tipo == 1) {
-	            			System.out.print(" Quantidade de Faixas: ");
-	            			quantidadeFaixas = leia.nextInt();
+		            		quantidadeFaixas = InputUtils.lerInt(" Quantidade de Faixas: ");
 	            			produto.criarProduto(new CD(produto.gerarNumero(), nome, preco, quantidadeEmEstoque, descricao, quantidadeFaixas));
 	            			break;
 		            			
 		            	} else if (tipo == 2) {
-	            			System.out.print(" Tamanho do Vinil (em polegadas): ");
-	            			tamanhoVinil = leia.nextInt();
+		            		tamanhoVinil = InputUtils.lerInt(" Tamanho do Vinil (em polegadas): ");
 	            			produto.criarProduto(new Vinil(produto.gerarNumero(), nome, preco, quantidadeEmEstoque, descricao, tamanhoVinil));
 	            			break;
 		            			
 		            	} else { 
 		            		System.err.println("Inválido. Tente novamente.");
-		            		keyPress(); 
 		            	}
 		            	
 		            } while(true);
@@ -99,8 +95,7 @@ public class Menu {
 		        	System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD +"\n┌──────────────────────────────┐");
 		            System.out.println("│      ATUALIZAR PRODUTO       │");
 		            System.out.println("└──────────────────────────────┘" + Cores.TEXT_RESET);
-		            System.out.print(" Digite o ID do produto: ");
-		            id = leia.nextInt();
+		            id = InputUtils.lerInt(" Digite o ID do produto: ");
 		            
 		            Optional <Produto> buscaProduto = produto.buscarNaCollection(id);
 		            
@@ -110,19 +105,15 @@ public class Menu {
 			            nome = leia.nextLine();
 			            System.out.print(" Descrição do produto: ");
 			            descricao = leia.nextLine();
-			            System.out.print(" Preço: ");
-			            preco = leia.nextFloat();
-			            System.out.print(" Quantidade em Estoque: ");
-			            quantidadeEmEstoque = leia.nextInt();
+			            preco = InputUtils.lerFloat(" Preço: ");
+			            quantidadeEmEstoque = InputUtils.lerInt(" Quantidade em Estoque: ");
 			            
 			            if(buscaProduto.get() instanceof CD cd) {
-			            	System.out.print(" Quantidade de Faixas: ");
-	            			quantidadeFaixas = leia.nextInt();
+			            	quantidadeFaixas = InputUtils.lerInt(" Quantidade de Faixas: ");
 	            			produto.atualizarProduto(new CD(cd.getId(), nome, preco, quantidadeEmEstoque, descricao, quantidadeFaixas));
 			            
 			            } else if (buscaProduto.get() instanceof Vinil vinil) {
-			            	System.out.print(" Tamanho do Vinil (em polegadas): ");
-	            			tamanhoVinil = leia.nextInt();
+			            	tamanhoVinil = InputUtils.lerInt(" Tamanho do Vinil (em polegadas): ");
 	            			produto.atualizarProduto(new Vinil(vinil.getId(), nome, preco, quantidadeEmEstoque, descricao, tamanhoVinil));
 			            	
 			            }
@@ -137,8 +128,7 @@ public class Menu {
 		        	System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD +"\n┌──────────────────────────────┐");
 		            System.out.println("│      CONSULTAR PRODUTO       │");
 		            System.out.println("└──────────────────────────────┘" + Cores.TEXT_RESET);
-		            System.out.print(" Digite o ID do produto: ");
-		            id = leia.nextInt();
+		            id = InputUtils.lerInt(" Digite o ID do produto: ");
 		        	produto.consultarProdutoPorId(id);
 		        	keyPress();
 		        }
@@ -149,8 +139,7 @@ public class Menu {
 		            System.out.println("└──────────────────────────────┘" + Cores.TEXT_RESET);
 		            boolean retornoFuncao = true;
 		            do {
-			            System.out.print(" Digite o ID do produto: ");
-			            id = leia.nextInt();
+		            	id = InputUtils.lerInt(" Digite o ID do produto: ");
 			            retornoFuncao = produto.deletarProduto(id);		           
 		            } while(retornoFuncao);
 		            
