@@ -23,8 +23,8 @@ public class Vinil extends Produto {
 	@Override
 	public void visualizar() {
 		super.visualizar();
-		System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM + " TAMANHO DO VINIL: " + this.tamanhoVinil);
-		System.out.println("─────────────────────────────────────" + Cores.TEXT_RESET);
+		System.out.println(" TAMANHO DO VINIL: " + this.tamanhoVinil);
+		System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM + "────────────────────────────────" + Cores.TEXT_RESET);
 	}
 	
 
