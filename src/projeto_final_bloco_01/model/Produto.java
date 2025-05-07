@@ -54,15 +54,23 @@ public abstract class Produto {
 	}
 	
 	// Método visualizar
-		public void visualizar() {
-			NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
-			
-			System.out.println(" ID: " + this.id);
-			System.out.println(" NOME: " + this.nome);
-			System.out.println(" DESCRIÇÃO: " + this.descricao);
-			System.out.println(" PREÇO: " + nfMoeda.format(this.preco));
-			System.out.println(" QUANTIDADE EM ESTOQUE: " + this.quantidadeEmEstoque);
+	public void visualizar() {
+		NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
+		
+		System.out.println(" ID: " + this.id);
+		System.out.println(" NOME: " + this.nome);
+		System.out.println(" DESCRIÇÃO: " + this.descricao);
+		System.out.println(" PREÇO: " + nfMoeda.format(this.preco));
+		System.out.println(" QUANTIDADE EM ESTOQUE: " + this.quantidadeEmEstoque);
 
-		}
+	}
+		
+	// Método Visualizar Resumido
+	public void visualizar(boolean resumido) {
+		if(resumido)
+		System.out.println("\n NOME: " + this.nome);
+		else
+			visualizar();
+	}
 	
 }

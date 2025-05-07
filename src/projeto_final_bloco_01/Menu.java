@@ -34,19 +34,23 @@ public class Menu {
 		Scanner leia = new Scanner(System.in);
 		
 		while(true) {
-			System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD + "┌──────────────────────────────┐");
-	        System.out.println("│       MENU PRINCIPAL         │");
-	        System.out.println("├──────────────────────────────┤"+ Cores.TEXT_RESET);
-	        System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM + "│                              │");
-	        System.out.println("│ 1 - Cadastrar um produto     │");
-	        System.out.println("│ 2 - Atualizar um produto     │");
-	        System.out.println("│ 3 - Consultar produto        │");
-	        System.out.println("│ 4 - Deletar um produto       │");
-	        System.out.println("│ 5 - Listar todos os produtos │");
-	        System.out.println("│                              │");
-	        System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD + "│                              │");
-	        System.out.println("│ 0 - Sair                     │");
-	        System.out.println("└──────────────────────────────┘" + Cores.TEXT_RESET);
+			System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD +
+					           "┌─────────────────────────────────────────┐");
+	        System.out.println("│             MENU PRINCIPAL              │");
+	        System.out.println("├─────────────────────────────────────────┤"+ Cores.TEXT_RESET);
+	        System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM +
+	        		           "│                                         │");
+	        System.out.println("│ 1 - Cadastrar um produto                │");
+	        System.out.println("│ 2 - Atualizar um produto                │");
+	        System.out.println("│ 3 - Consultar produto                   │");
+	        System.out.println("│ 4 - Deletar um produto                  │");
+	        System.out.println("│ 5 - Listar todos os produtos            │");
+	        System.out.println("│ 6 - Listar todos os produtos (Resumido) │");
+	        System.out.println("│                                         │");
+	        System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD +
+	        		           "│                                         │");
+	        System.out.println("│ 0 - Sair                                │");
+	        System.out.println("└─────────────────────────────────────────┘" + Cores.TEXT_RESET);
 	        
 		        try {
 		        System.out.print("\n Escolha uma opção: ");
@@ -151,6 +155,15 @@ public class Menu {
 		            System.out.println("│     PRODUTOS CADASTRADOS     │");
 		            System.out.println("└──────────────────────────────┘" + Cores.TEXT_RESET);
 		            produto.listarTodosProdutos();
+		            keyPress();
+		        }
+		        
+		        case 6 -> {
+		        	System.out.println(Cores.ANSI_LILAC_BACKGROUND + Cores.TEXT_BLUE_PETROLEUM_BOLD +
+		        			         "\n┌─────────────────────────────────────────┐");
+		            System.out.println("│     RESUMO DOS PRODUTOS CADASTRADOS     │");
+		            System.out.println("└─────────────────────────────────────────┘" + Cores.TEXT_RESET);
+		            produto.listarTodosProdutos(true);
 		            keyPress();
 		        }
 		        

@@ -27,5 +27,16 @@ public class Vinil extends Produto {
 		System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM + "────────────────────────────────" + Cores.TEXT_RESET);
 	}
 	
+	public void visualizar(boolean resumido) {
+		if(resumido) {
+		super.visualizar(true);
+		System.out.println(" TIPO DO PRODUTO: VINIL");
+		System.out.println(Cores.ANSI_LILAC_BACKGROUND_BRIGHT + Cores.TEXT_BLUE_PETROLEUM + "───────────────────────────────────────────" + Cores.TEXT_RESET);
+
+		} else {
+			visualizar();
+		}
+	}
+	
 
 }

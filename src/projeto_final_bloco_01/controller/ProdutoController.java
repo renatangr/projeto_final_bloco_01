@@ -27,6 +27,18 @@ public class ProdutoController implements ProdutoRepository {
 		}
 		
 	}
+	
+	public void listarTodosProdutos(boolean resumido) {
+		if(resumido) 
+		for(var produto : produtosCadastrados) {
+			produto.visualizar(true);
+		}
+		else 
+			for(var produto : produtosCadastrados) {
+				produto.visualizar();
+			}
+		
+	}
 
 	@Override
 	public void consultarProdutoPorId(int id) {
